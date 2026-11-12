@@ -77,7 +77,7 @@ type ToolCallFunction struct {
 //
 // Known fields are typed; Extra holds any other Chat Completions field and is sent as it is.
 type ChatCompletionParams struct {
-	// Model is an ID from Client.Models.List, such as "fta/zai/glm-5.3".
+	// Model is an ID from Client.Models.List, such as "glm-5.3".
 	Model    string    `json:"-"`
 	Messages []Message `json:"messages"`
 	// FallbackModels overrides the client's fallback list for this call. Nil keeps the client's list.

@@ -11,7 +11,7 @@ client, err := freetheai.NewClient(
 	freetheai.WithAPIKey("ftai_..."),                 // default: FREETHEAI_API_KEY
 	freetheai.WithBaseURL("https://api.freetheai.org/v1"), // default: FREETHEAI_BASE_URL
 	freetheai.WithMaxRetries(3),                      // retries per model for retryable errors
-	freetheai.WithFallbackModels("fta/zai/glm-5.3-flash"),
+	freetheai.WithFallbackModels("glm-5.3-flash"),
 	freetheai.WithMaxConcurrency(2),                  // fixed cap; learned when left out
 	freetheai.WithStreamTransport(true),              // fetch non-streamed chats as a stream
 	freetheai.WithTimeout(10*time.Minute),            // plain (non-streamed) requests

@@ -6,7 +6,7 @@
 //		log.Fatal(err)
 //	}
 //	reply, err := client.Chat.Completions.New(ctx, freetheai.ChatCompletionParams{
-//		Model:    "fta/zai/glm-5.3",
+//		Model:    "glm-5.3",
 //		Messages: []freetheai.Message{{Role: "user", Content: "Hello!"}},
 //	})
 package freetheai

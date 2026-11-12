@@ -1,5 +1,5 @@
 ---
-description: Install the FreeTheAI Go SDK, create a free API key, do the daily check-in, and send your first request.
+description: Install the FreeTheAI Go SDK, create an API key, add funds, and send your first request.
 ---
 
 # Getting started
@@ -16,9 +16,7 @@ Go 1.21 or newer. There are no other dependencies.
 
 1. Sign up at [freetheai.org](https://freetheai.org).
 2. Open [API keys](https://freetheai.org/dashboard/api-keys) and create a key. It starts with `ftai_` and is shown once, so copy all of it.
-3. Free models need the [daily check-in](https://freetheai.org/checkin), one quick captcha a day.
-
-The free tier is 50 requests a day, reset at 00:00 UTC. The [plan page](https://freetheai.org/dashboard/plan) shows how to raise it.
+3. Add funds to your wallet (from $5, crypto or card) and follow a provider at [freetheai.org/providers](https://freetheai.org/providers). Each request bills the tokens it used at the listed price.
 
 === "macOS / Linux"
 
@@ -34,7 +32,7 @@ The free tier is 50 requests a day, reset at 00:00 UTC. The [plan page](https://
 
 ## 3. Pick a model
 
-Model IDs look like `fta/<provider>/<model>`. Browse them on [freetheai.org/models](https://freetheai.org/models) or list them in code:
+A model ID is the model name, such as `glm-5.3`; `<provider>/<model>` picks one provider. Browse them on [freetheai.org/models](https://freetheai.org/models) or list them in code:
 
 ```go
 models, err := client.Models.List(ctx)
@@ -50,7 +48,7 @@ for _, model := range models {
 
 ```go
 reply, err := client.Chat.Completions.New(ctx, freetheai.ChatCompletionParams{
-	Model: "fta/zai/glm-5.3",
+	Model: "glm-5.3",
 	Messages: []freetheai.Message{
 		{Role: "system", Content: "You are a concise assistant."},
 		{Role: "user", Content: "What is an API gateway?"},

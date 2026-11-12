@@ -1,12 +1,12 @@
 ---
-description: Official Go client for FreeTheAI, the free OpenAI-compatible AI API, with typed errors, built-in retries, fallback models, and rate-limit handling. Standard library only.
+description: Official Go client for FreeTheAI, the AI model marketplace with one OpenAI-compatible API, with typed errors, built-in retries, fallback models, and rate-limit handling. Standard library only.
 ---
 
 # FreeTheAI Go SDK
 
 ![FreeTheAI Go SDK](assets/banner.jpg)
 
-`freetheai-go` is the official Go client for [FreeTheAI](https://freetheai.org), a free OpenAI-compatible AI API. One key gives you dozens of chat models, streaming, tool calls, web search with sourced answers, and image and video tasks. It uses only the standard library and needs Go 1.21 or newer.
+`freetheai-go` is the official Go client for [FreeTheAI](https://freetheai.org), an AI model marketplace with one OpenAI-compatible API. One key reaches models from many providers, paid per token, with streaming, tool calls, web search with sourced answers, and image and video tasks. It uses only the standard library and needs Go 1.21 or newer.
 
 ```bash
 go get github.com/Free-The-Ai/freetheai-go@latest
@@ -18,7 +18,7 @@ if err != nil {
 	log.Fatal(err)
 }
 reply, err := client.Chat.Completions.New(ctx, freetheai.ChatCompletionParams{
-	Model:    "fta/zai/glm-5.3",
+	Model:    "glm-5.3",
 	Messages: []freetheai.Message{{Role: "user", Content: "Write a haiku about open models."}},
 })
 ```
@@ -36,7 +36,7 @@ The client is written around how the FreeTheAI API actually behaves, so your cod
 
 ## Where to next
 
-- [Getting started](getting-started.md): key, check-in, first request
+- [Getting started](getting-started.md): key, funds, first request
 - [Chat and streaming](guides/chat.md): messages, streaming, parameters
 - [Errors](errors.md): every error type and when it happens
 - [Configuration](configuration.md): all options

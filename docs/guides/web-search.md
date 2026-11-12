@@ -37,7 +37,7 @@ Models with built-in search take `Extra: map[string]any{"web_search_options": ma
 
 ```go
 params := freetheai.ChatCompletionParams{
-	Model:    "fta/zai/glm-5.3",
+	Model:    "glm-5.3",
 	Messages: []freetheai.Message{{Role: "user", Content: "What is the weather in Tokyo today?"}},
 	WebSearch: map[string]any{},
 }

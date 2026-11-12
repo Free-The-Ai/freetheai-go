@@ -19,7 +19,7 @@
 
 # FreeTheAI Go SDK
 
-The official Go client for [FreeTheAI](https://freetheai.org), a free OpenAI-compatible AI API. One key gives you dozens of chat models, streaming, tool calls, web search with sourced answers, and image and video tasks. It uses only the Go standard library.
+The official Go client for [FreeTheAI](https://freetheai.org), an AI model marketplace with one OpenAI-compatible API. One key reaches models from many providers, paid per token, with streaming, tool calls, web search with sourced answers, and image and video tasks. It uses only the Go standard library.
 
 ```bash
 go get github.com/Free-The-Ai/freetheai-go@latest
@@ -27,7 +27,7 @@ go get github.com/Free-The-Ai/freetheai-go@latest
 
 ## Quickstart
 
-Create a key at [freetheai.org](https://freetheai.org/dashboard/api-keys), do the [daily check-in](https://freetheai.org/checkin) for free models, and set `FREETHEAI_API_KEY`.
+Create a key at [freetheai.org](https://freetheai.org/dashboard/api-keys), add funds and follow a provider at [freetheai.org/providers](https://freetheai.org/providers), and set `FREETHEAI_API_KEY`.
 
 ```go
 package main
@@ -46,7 +46,7 @@ func main() {
 		log.Fatal(err)
 	}
 	reply, err := client.Chat.Completions.New(context.Background(), freetheai.ChatCompletionParams{
-		Model:    "fta/zai/glm-5.3",
+		Model:    "glm-5.3",
 		Messages: []freetheai.Message{{Role: "user", Content: "Write a haiku about open models."}},
 	})
 	if err != nil {
@@ -91,7 +91,7 @@ Every error is a typed value, so `errors.As` works. Read the [errors guide](http
 
 | Guide | |
 | --- | --- |
-| [Getting started](https://free-the-ai.github.io/freetheai-go/getting-started/) | Key, check-in, first request |
+| [Getting started](https://free-the-ai.github.io/freetheai-go/getting-started/) | Key, funds, first request |
 | [Chat and streaming](https://free-the-ai.github.io/freetheai-go/guides/chat/) | Parameters, streaming, reasoning, tool calls |
 | [Web search](https://free-the-ai.github.io/freetheai-go/guides/web-search/) | Results and sourced answers |
 | [Images and video](https://free-the-ai.github.io/freetheai-go/guides/media/) | Media tasks |

@@ -10,7 +10,7 @@ description: Chat completions and streaming with the FreeTheAI Go SDK - messages
 temp := 0.7
 maxTokens := 400
 reply, err := client.Chat.Completions.New(ctx, freetheai.ChatCompletionParams{
-	Model:       "fta/zai/glm-5.3",
+	Model:       "glm-5.3",
 	Messages:    []freetheai.Message{{Role: "user", Content: "Name three uses for a paperclip."}},
 	Temperature: &temp,
 	MaxTokens:   &maxTokens,
@@ -29,7 +29,7 @@ params.Extra = map[string]any{"frequency_penalty": 0.2}
 
 ```go
 stream, err := client.Chat.Completions.NewStreaming(ctx, freetheai.ChatCompletionParams{
-	Model:    "fta/kimi/k3",
+	Model:    "kimi-k3",
 	Messages: []freetheai.Message{{Role: "user", Content: "Tell me a short story."}},
 })
 if err != nil {
@@ -82,7 +82,7 @@ tools := []freetheai.Tool{{
 }}
 messages := []freetheai.Message{{Role: "user", Content: "Is it raining in Paris?"}}
 reply, err := client.Chat.Completions.New(ctx, freetheai.ChatCompletionParams{
-	Model: "fta/zai/glm-5.3", Messages: messages, Tools: tools,
+	Model: "glm-5.3", Messages: messages, Tools: tools,
 })
 // Run each reply.Choices[0].Message.ToolCalls entry, then append a role "tool" message
 // with the same ToolCallID and send the conversation again.
