@@ -1,5 +1,5 @@
-// Package freetheai is the official Go client for FreeTheAI, the free,
-// OpenAI-compatible AI API. It uses only the standard library.
+// Package freetheai is the official Go client for FreeTheAI, the AI model
+// marketplace with one OpenAI-compatible API. It uses only the standard library.
 //
 //	client, err := freetheai.NewClient() // reads FREETHEAI_API_KEY
 //	if err != nil {
